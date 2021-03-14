@@ -1,0 +1,37 @@
+<form (ngSubmit)="insertData()" name="form" [formGroup]="form">
+  <div class="mb-3">
+    <label class="form-label">Tag</label>
+    <input type="text" name="tag" class="form-control" placeholder="Tag"
+    [(ngModel)]="awesome.tag"
+    formControlName="tag" [ngClass]="{'is-invalid':form.get('tag').touched && form.get('tag').invalid}"
+    >
+    <div *ngIf="form.get('tag').touched && form.get('tag').invalid" class="invalid-feedback">
+      <div *ngIf="form.get('tag').errors.required">Bạn cần phải nhập Tag</div>
+      <div *ngIf="form.get('tag').errors.minlength">Tag phải có ít nhất 5 ký tự </div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">URL</label>
+    <input type="text" name="url" class="form-control" placeholder="URL"
+    [(ngModel)]="awesome.url"
+    formControlName="url" [ngClass]="{'is-invalid':form.get('url').touched && form.get('url').invalid}"
+    >
+    <div *ngIf="form.get('url').touched && form.get('url').invalid" class="invalid-feedback">
+      <div *ngIf="form.get('url').errors.required">Bạn cần phải nhập URL</div>
+      <div *ngIf="form.get('url').errors.minlength">URL phải có ít nhất 10 ký tự </div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Descriptions</label>
+    <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"
+      [(ngModel)]="awesome.description"
+    formControlName="description" [ngClass]="{'is-invalid':form.get('description').touched && form.get('description').invalid}"
+      ></textarea>
+        <div class="invalid-feedback">
+              <div>Bạn cần phải nhập mô tả</div>
+        </div>
+  </div>
+  <div class="d-flex justify-content-between">
+    <button class="btn btn-primary" [disabled]='!form.valid'>Create</button>
+  </div>
+</form>

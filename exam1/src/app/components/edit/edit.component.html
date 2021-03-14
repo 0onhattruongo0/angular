@@ -1,0 +1,22 @@
+<div class="mt-4 mb-4">
+  <button class="btn btn-primary btn-sm" routerLink="" style="width:100px;">Trang chủ</button>
+</div>
+<form (ngSubmit)="update()">
+  <div class="mb-3">
+    <label class="form-label">Tag</label>
+    <input type="text" name="tag" class="form-control" placeholder="Tag" [(ngModel)]="awesome.tag">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">URL</label>
+    <input type="email" name="url" class="form-control" placeholder="URL" [(ngModel)]="awesome.url">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Descriptions</label>
+    <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="awesome.description"></textarea>
+  </div>
+  <div class="d-flex justify-content-between">
+    <button class="btn btn-warning">Update</button>
+    <a (click)="deleteAwesome(awesome.id)" class="btn btn-danger">Remove</a>
+  </div>
+</form>
+

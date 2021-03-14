@@ -1,0 +1,30 @@
+<form (ngSubmit)="insertData()" name="form" [formGroup]="form">
+  <div class="form-group">
+    <label for="">Name</label>
+    <input type="text" name="name" class="form-control" [(ngModel)]="employee.name"
+    formControlName="name" [ngClass]="{'is-invalid':form.get('name').touched && form.get('name').invalid}"
+    >
+    <div class="invalid-feedback">
+      <div>Name is requied</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="">Email</label>
+    <input type="email" name="email" class="form-control" [(ngModel)]="employee.email"
+     formControlName="email" [ngClass]="{'is-invalid':form.get('email').touched && form.get('email').invalid}">
+    <div *ngIf="form.get('email').touched && form.get('email').invalid" class="invalid-feedback">
+      <div *ngIf="form.get('email').errors.required">Email is requied</div>
+      <div *ngIf="form.get('email').errors.email">Email is incorrect</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="">Salary</label>
+    <input type="number" name="salary" class="form-control"[(ngModel)]="employee.salary"
+    formControlName="salary" [ngClass]="{'is-invalid':form.get('salary').touched && form.get('salary').invalid}" >
+    <div *ngIf="form.get('salary').touched && form.get('salary').invalid" class="invalid-feedback">
+      <div *ngIf="form.get('salary').errors.required">Salary is requied</div>
+      <div *ngIf="form.get('salary').errors.pattern">Salary is incorrect</div>
+    </div>
+  </div>
+  <button class="btn btn-primary btn-sm mt-4" [disabled]='!form.valid'>Submit</button>
+</form>

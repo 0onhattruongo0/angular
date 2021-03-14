@@ -1,0 +1,22 @@
+{
+  "awesomes": [
+    {
+      "id": 2,
+      "tag": "Javascript",
+      "url": "https://reqres.in",
+      "description": "Rest server ready to use"
+    },
+    {
+      "tag": "asádasdasd",
+      "url": "ádasdsadasdasd",
+      "id": 3,
+      "description": "sadasd"
+    },
+    {
+      "tag": "Voluptatem Cum aute",
+      "url": "Cupiditate molestias",
+      "description": "Pariatur Aut praese",
+      "id": 5
+    }
+  ]
+}
